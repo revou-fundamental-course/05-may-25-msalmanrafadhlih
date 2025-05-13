@@ -6,18 +6,11 @@ const form = document.getElementById("contactForm");
 
 
 openBtn.addEventListener('click', () => {
-  popup.style.display = 'flex';
+  popup.classList.add('show');
 });
 
 exitBtn.addEventListener('click', () => {
-  popup.style.display = 'none';
-});
-
-
-popup.addEventListener('click', (e) => {
-  if (e.target === popup) {
-    e.stopPropagation(); 
-  }
+  popup.classList.remove('show');
 });
 
 document.addEventListener("DOMContentLoaded", function () {

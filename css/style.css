@@ -229,7 +229,6 @@ div.fitur-p {
 
 .popup-overlay {
     box-sizing: border-box;
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -239,8 +238,17 @@ div.fitur-p {
     z-index: 999;
     justify-content: center;
     align-items: center;
+    
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 .contact-form {
     display: flex;
@@ -255,6 +263,13 @@ div.fitur-p {
     border-radius: 8px;
     width: 300px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.show .contact-form {
+    transform: scale(1);
 }
 
 .contact-form h2 {
@@ -336,7 +351,7 @@ btn:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 .package-list {
@@ -373,6 +388,7 @@ btn:hover {
     font-size: 18px;
     font-weight: 700;
     color: #2d3748;
+    width: 200px;
 }
 
 .package-item span {
