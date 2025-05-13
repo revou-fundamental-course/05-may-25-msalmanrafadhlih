@@ -19,7 +19,7 @@ exitBtn.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Mencegah form submit langsung
+    event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
